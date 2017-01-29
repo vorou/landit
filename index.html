@@ -7,6 +7,7 @@
     <meta name="description" content="land it">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -15,13 +16,14 @@
     <div id="full" class="Aligner">
       <div class="Aligner-item">
         <p class='title'></p>
+        <button type="button">sign up</button>
       </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vibrant.js/1.0.0/Vibrant.min.js"></script>
     <script>
       function setTitle(word) {
         const title = document.querySelector('.title');
-        title.textContent = word;
+        title.textContent = word.toLowerCase();
       }
 
       fetch('http://www.setgetgo.com/randomword/get.php')
@@ -38,6 +40,8 @@
           if (swatches.hasOwnProperty(swatch) && swatches[swatch])
               console.log(swatch, swatches[swatch].getHex())
       });
+
+      document.querySelector('button').addEventListener('click', _ => window.location.reload())
     </script>
   </body>
 </html>

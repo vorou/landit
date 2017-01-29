@@ -20,6 +20,8 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
 }
 
 .title {
+  position: relative;
+  top: 35px;
   font-size: 130px;
   font-family: 'Source Sans Pro', sans-serif;
   text-shadow: rgba(0, 0, 0, 0.15) 2px 2px 5px;
@@ -42,14 +44,35 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   align-self: flex-end;
 }
 
+button {
+  display: block;
+  margin: 0 auto;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 30px 50px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 27px;
+  font-family: 'Montserrat', serif;
+  box-shadow: rgba(0, 0, 0, 1) 0 0 20px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;  
+}
+
+button:hover {
+  background-color: #0f5e12;
+}
+
 .blurer {
   margin: auto;
-  width: 50%;
-  height: 100px;
+  width: 100%;
+  height: 150px;
   position: absolute;
   background-color: white;
-  filter: blur(30px);
-  opacity: 10%;
+  /*filter: blur(30px);*/
+  opacity: 0.4;
   top: 0; left: 0; bottom: 0; right: 0;
   z-index: -10;
 }
