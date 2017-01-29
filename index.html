@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>land it</title>
+    <meta name="description" content="land it">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="blurer">
+    </div>
+    <div id="full" class="Aligner">
+      <div class="Aligner-item">
+        <p class='title'></p>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vibrant.js/1.0.0/Vibrant.min.js"></script>
+    <script>
+      function setTitle(word) {
+        const title = document.querySelector('.title');
+        title.textContent = word;
+      }
+
+      fetch('http://www.setgetgo.com/randomword/get.php')
+        .then(blob=>blob.text())
+        .then(word=>setTitle(word));
+
+      const img = document.createElement('img');
+      const backgroudUri = document.querySelector('html').getAttribute('');
+      img.setAttribute('src', backgroudUri);
+      img.addEventListener('load', function() {
+        var vibrant = new Vibrant(img);
+        var swatches = vibrant.swatches()
+        for (var swatch in swatches)
+          if (swatches.hasOwnProperty(swatch) && swatches[swatch])
+              console.log(swatch, swatches[swatch].getHex())
+      });
+    </script>
+  </body>
+</html>
